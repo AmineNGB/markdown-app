@@ -1,3 +1,18 @@
+* {
+  background-color: #18191E;
+  color: white;
+  border-radius: 12px;
+}
+
 .container {
   margin-top: 24px;
+  border-radius: 12px;
+  border: solid yellow;
+}
+
+.left {
+  flex: 0 0 50%;
+}
+.right {
+  flex: 0 0 50%;
 }

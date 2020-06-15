@@ -10,6 +10,19 @@ export default class App extends Component {
     text: markedText
   }
 
+  componentDidMount () {
+    const text = localStorage.getItem('text')
+    if (text) {
+      this.setState({ text })
+    } else {
+      this.setState({ text: markedText })
+    }
+  }
+  componentDidUpdate () {
+  const { text } = this.state
+  localStorage.setItem('text', text)
+  }
+
   handleChange = event => {
     const text = event.target.value
     this.setState({ text })
@@ -28,12 +41,13 @@ export default class App extends Component {
             <textarea
               onChange={this.handleChange}
               value={ this.state.text }
-              classname='form-control'
+              classname='form-control left'
               rows="35" />
           </div>
           <div className="col-sm-6">
-            <div 
-            dangerouslySetInnerHTML={this.renderText
+            <div
+              className='right'
+              dangerouslySetInnerHTML={this.renderText
             (this.state.text)} />
           </div>
         </div>
