@@ -9,10 +9,10 @@
   border-radius: 12px;
   border: solid yellow;
 }
-
-.left {
-  flex: 0 0 50%;
+textarea {
+  width: 440px;
 }
+
 .right {
-  flex: 0 0 50%;
+  width: 440px;
 }
